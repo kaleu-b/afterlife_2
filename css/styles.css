@@ -16,11 +16,11 @@ body, html{
 body{
     display: grid;
     max-width: 100%;
-    /*width: 100vw;*/
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
     "header"
+    "video"
     "nav"
     "footer"
     ;
@@ -29,7 +29,10 @@ body{
 header { grid-area: header; }
 nav { grid-area: footer; }
 footer { grid-area: footer; }
+.videoarea { grid-area: video; }
 
+
+/* definiões dos componentes do headder */
 header {
     padding: 1em 0 0 0;
     gap: 0.5em;
@@ -84,9 +87,23 @@ nav a:hover{
   background-color: aquamarine;
 }
 
+/* definição dos componentes de vídeo */
+.videoarea{
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
+.videoarea video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* definição do footer */
 footer{
     width: 100%;
     bottom: 0;
     position: fixed;
+    z-index: 10;
 }
